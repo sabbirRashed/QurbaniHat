@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactPage = () => {
     return (
-        <div>
+        <div className='min-h-[80vh]'>
             This is contact Page.
         </div>
     );

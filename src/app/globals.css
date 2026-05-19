@@ -13,6 +13,10 @@ body {
   color: var(--color-primary);
 }
 
+.hover-action:hover{
+  background-color: var(--color-action);
+}
+
 .text-white{
   color: var(--color-white);
 }

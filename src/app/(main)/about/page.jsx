@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutPage = () => {
     return (
-        <div>
+        <div className='min-h-[80vh]'>
             This is about page
         </div>
     );

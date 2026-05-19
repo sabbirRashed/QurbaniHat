@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomePage = () => {
     return (
-        <div>
+        <div className='min-h-[80vh]'>
             This is home page
         </div>
     );
