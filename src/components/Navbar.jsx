@@ -13,7 +13,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <nav className="w-11/12 max-w-400 mx-auto flex justify-between items-center bg-primary text-white py-3 px-8 rounded-full mt-2">
+            <nav className="w-11/12 max-w-400 mx-auto flex justify-between items-center bg-primary text-white py-1 px-8 rounded-full mt-2">
                 <div className='flex flex-col justify-center items-center'>
                     <Image 
                     src={logo}

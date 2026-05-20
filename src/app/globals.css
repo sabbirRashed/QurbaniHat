@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "@heroui/styles"; 
 
 
 body {
@@ -9,9 +10,19 @@ body {
   background-color: var(--color-primary);
 }
 
+.bg-secondary{
+  background-color: var(--color-secondary);
+}
+
 .text-primary{
   color: var(--color-primary);
 }
+
+.text-secondary{
+  color: var(--color-secondary);
+}
+
+
 
 .hover-action:hover{
   background-color: var(--color-action);
