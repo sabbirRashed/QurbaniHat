@@ -22,7 +22,9 @@ body {
   color: var(--color-secondary);
 }
 
-
+.text-action{
+  color: var(--color-action);
+}
 
 .hover-action:hover{
   background-color: var(--color-action);

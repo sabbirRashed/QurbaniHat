@@ -20,8 +20,8 @@ const Banner = () => {
     }, [])
 
     return (
-        <div className='bg-[#f3ede4] py-15 md:py-20'>
-            <div className='w-11/12 max-w-400 mx-auto flex flex-col md:flex-row justify-between items-center gap-10'>
+        <div className='bg-[#f3ede4] py-15 md:py-20 animate__animated animate__fadeInUp animate__slow'>
+            <div className='w-11/12 max-w-350 mx-auto flex flex-col md:flex-row justify-between items-center gap-10'>
                 <div className='text-center md:text-left'>
                     <p className="uppercase tracking-[2px] md:tracking-[4px] text-xs lg:text-sm text-blackm mb-2 md:mb-4">
                         Trusted Online Qurbani Marketplace
@@ -43,7 +43,7 @@ const Banner = () => {
                     key={index}
                         src={images[index]}
                         alt='banner image'
-                        width={800}
+                        width={600}
                         height={400}
                         className='animate__animated animate__fadeIn animate__slow transition-all duration-500'></Image>
                 </div>

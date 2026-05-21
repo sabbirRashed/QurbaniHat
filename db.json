@@ -1,0 +1,121 @@
+{
+    "aninals": [
+        {
+            "id": 1,
+            "name": "Deshi Shahi Cow",
+            "type": "Cow",
+            "breed": "Local Deshi",
+            "price": 120000,
+            "weight": 280,
+            "age": 3,
+            "location": "Bogura",
+            "description": "Healthy deshi cow suitable for Qurbani. Well fed with natural food.",
+            "image": "https://i.ibb.co.com/KckqYGTz/shahi-cow2.jpg",
+            "category": "Large Animal"
+        },
+        {
+            "id": 2,
+            "name": "Sahiwal Premium Cow",
+            "type": "Cow",
+            "breed": "Sahiwal",
+            "price": 180000,
+            "weight": 350,
+            "age": 4,
+            "location": "Rajshahi",
+            "description": "Strong and healthy Sahiwal cow with excellent body condition.",
+            "image": "https://i.ibb.co.com/HT0JFsL3/Pure-Sahiwal-Bull1.jpg",
+            "category": "Large Animal"
+        },
+        {
+            "id": 3,
+            "name": "Brahman Giant Bull",
+            "type": "Cow",
+            "breed": "Brahman",
+            "price": 250000,
+            "weight": 500,
+            "age": 5,
+            "location": "Sirajganj",
+            "description": "Large Brahman bull raised with organic feed and proper care.",
+            "image": "https://i.ibb.co.com/270FXr1v/brahman-cow3.jpg",
+            "category": "Large Animal"
+        },
+        {
+            "id": 4,
+            "name": "Black Bengal Goat",
+            "type": "Goat",
+            "breed": "Black Bengal",
+            "price": 25000,
+            "weight": 35,
+            "age": 2,
+            "location": "Khulna",
+            "description": "Popular Black Bengal goat, healthy and active.",
+            "image": "https://i.ibb.co.com/ymcVfZPS/goat1.jpg",
+            "category": "Small Animal"
+        },
+        {
+            "id": 5,
+            "name": "Jamunapari Goat",
+            "type": "Goat",
+            "breed": "Jamunapari",
+            "price": 45000,
+            "weight": 55,
+            "age": 3,
+            "location": "Mymensingh",
+            "description": "Tall and attractive Jamunapari goat perfect for Qurbani.",
+            "image": "https://i.ibb.co.com/bgnhHQVs/goat2.webp",
+            "category": "Small Animal"
+        },
+        {
+            "id": 6,
+            "name": "Hybrid White Cow",
+            "type": "Cow",
+            "breed": "Friesian Cross",
+            "price": 200000,
+            "weight": 420,
+            "age": 4,
+            "location": "Dhaka",
+            "description": "Well-maintained hybrid cow with excellent health condition.",
+            "image": "https://i.ibb.co.com/fY0x0HtY/cow4.jpg",
+            "category": "Large Animal"
+        },
+        {
+            "id": 7,
+            "name": "Red Chittagong Cow",
+            "type": "Cow",
+            "breed": "RCC",
+            "price": 140000,
+            "weight": 300,
+            "age": 3,
+            "location": "Chattogram",
+            "description": "Famous Red Chittagong cow with strong body structure.",
+            "image": "https://i.ibb.co.com/SX1GS9c3/cow5.jpg",
+            "category": "Large Animal"
+        },
+        {
+            "id": 8,
+            "name": "Boer Goat",
+            "type": "Goat",
+            "breed": "Boer",
+            "price": 60000,
+            "weight": 70,
+            "age": 3,
+            "location": "Cumilla",
+            "description": "Imported Boer goat with heavy weight and premium quality.",
+            "image": "https://i.ibb.co.com/zhtJsK1x/goat3.webp",
+            "category": "Small Animal"
+        },
+        {
+            "id": 9,
+            "name": "Mini Deshi Goat",
+            "type": "Goat",
+            "breed": "Local Deshi",
+            "price": 18000,
+            "weight": 28,
+            "age": 1,
+            "location": "Rangpur",
+            "description": "Affordable and healthy local goat suitable for small families.",
+            "image": "https://i.ibb.co.com/4Zf93MYx/goat4.webp",
+            "category": "Small Animal"
+        }
+    ]
+}
