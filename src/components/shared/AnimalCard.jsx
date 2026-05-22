@@ -6,7 +6,7 @@ const AnimalCard = ({ animal }) => {
     const { name, description, type, price, breed, category, image, location, weight, age } = animal
 
     return (
-        <div className=" max-w-sm  rounded-2xl overflow-hidden shadow-lg bg-white border border-gray-100 hover:shadow-xl transition-all duration-300  hover:scale-[1.02]">
+        <div className="w-full max-w-sm mx-auto   rounded-2xl overflow-hidden shadow-lg bg-white border border-gray-100 hover:shadow-xl transition-all duration-300  hover:scale-[1.02]">
 
             <div className="relative h-48 w-full bg-gray-100">
                 <Image
@@ -29,7 +29,7 @@ const AnimalCard = ({ animal }) => {
                 </div>
 
 
-                <div class="grid grid-cols-2 gap-2 my-4 bg-gray-50 p-3 rounded-xl text-sm text-gray-600">
+                <div class="grid grid-cols-2 gap-2 my-4 bg-[var(--color-bg)] p-3 rounded-xl text-sm text-gray-600">
                     <div class="flex items-center gap-1">
                         <span class="font-semibold text-primary">Weight:</span>
                         {weight} kg
@@ -52,7 +52,7 @@ const AnimalCard = ({ animal }) => {
                             ৳ {price}
                         </p>
                     </div>
-                    <button className="bg-[var(--color-secondary)] hover:bg-[var(--color-primary)] text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200 text-sm">
+                    <button className="bg-[var(--color-secondary)] hover:bg-[var(--color-primary)] text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 text-sm">
                         View Details
                     </button>
                 </div>

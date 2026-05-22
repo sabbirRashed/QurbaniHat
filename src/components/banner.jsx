@@ -35,7 +35,7 @@ const Banner = () => {
                         Browse and book healthy Qurbani animals from trusted sellers.
                     </p>
 
-                    <Button className="bg-[var(--color-action)] hover:bg-[var(--color-primary)] transition duration-300">Browse All Animals</Button>
+                    <Button className="bg-[var(--color-action)] hover:bg-[var(--color-primary)] transition duration-300 py-5">Browse All Animals</Button>
                 </div>
 
                 <div >
