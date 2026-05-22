@@ -24,22 +24,22 @@ const AnimalCard = ({ animal }) => {
             <div class="p-5">
 
                 <div class="mb-2">
-                    <h3 class="text-xl font-bold text-primary line-clamp-1">{name}</h3>
-                    <p class="text-sm font-medium text-secondary">Breed: {breed}</p>
+                    <h3 className="text-xl font-bold text-primary line-clamp-1">{name}</h3>
+                    <p className="text-sm font-medium text-secondary">Breed: {breed}</p>
                 </div>
 
 
                 <div class="grid grid-cols-2 gap-2 my-4 bg-[var(--color-bg)] p-3 rounded-xl text-sm text-gray-600">
                     <div class="flex items-center gap-1">
-                        <span class="font-semibold text-primary">Weight:</span>
+                        <span className="font-semibold text-primary">Weight:</span>
                         {weight} kg
                     </div>
                     <div class="flex items-center gap-1">
-                        <span class="font-semibold text-primary">Age:</span>
+                        <span className="font-semibold text-primary">Age:</span>
                         {age} Years
                     </div>
                     <div class="flex items-center gap-1 col-span-2">
-                        <span class="font-semibold text-primary">Location:</span>
+                        <span className="font-semibold text-primary">Location:</span>
                         {location}
                     </div>
                 </div>
@@ -47,8 +47,8 @@ const AnimalCard = ({ animal }) => {
 
                 <div class="flex items-center justify-between mt-4 pt-2 border-t border-gray-100">
                     <div>
-                        <p class="text-xs text-gray-400 uppercase font-semibold">Price</p>
-                        <p class="text-xl font-black text-action">
+                        <p className="text-xs text-gray-400 uppercase font-semibold">Price</p>
+                        <p className="text-xl font-black text-action">
                             ৳ {price}
                         </p>
                     </div>
