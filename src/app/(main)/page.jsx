@@ -15,7 +15,7 @@ const HomePage = async () => {
             <Banner></Banner>
 
             {/* featured animals */}
-            <div className="w-11/12 max-w-350 mx-auto mt-20 space-y-2">
+            <div id="featured_animal" className="w-11/12 max-w-350 mx-auto mt-20 space-y-2 scroll-mt-24">
                 <h2 className="text-2xl md:text-3xl font-bold text-primary">Featured Animals</h2>
                 <div className="flex justify-between items-center gap-10">
                     <p className="text-sm sm:text-base text-gray-600 ">Find healthy and well-cared Qurbani animals at affordable prices.</p>

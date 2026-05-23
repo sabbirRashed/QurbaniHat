@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 
-const AnimalCard = async({ animal}) => {
+const AnimalCard = ({ animal}) => {
   
     const {id, name, price, breed, category, image, location, weight, age } = animal
 
