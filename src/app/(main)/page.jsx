@@ -1,14 +1,15 @@
-import Banner from "@/components/banner";
+import Banner from "@/components/shared/banner";
 import AnimalCard from "@/components/shared/AnimalCard";
 import { getAllanimals } from "@/lib/data";
 import { Button } from "@heroui/react";
+import Link from "next/link";
 
 
 const HomePage = async () => {
     const animals = await getAllanimals();
 
     return (
-        <div className='min-h-[80vh] mt-15'>
+        <div className='min-h-[80vh]'>
 
             {/* banner */}
             <Banner></Banner>
@@ -18,7 +19,9 @@ const HomePage = async () => {
                 <h2 className="text-2xl md:text-3xl font-bold text-primary">Featured Animals</h2>
                 <div className="flex justify-between items-center gap-10">
                     <p className="text-sm sm:text-base text-gray-600 ">Find healthy and well-cared Qurbani animals at affordable prices.</p>
-                    <Button className="bg-[var(--color-action)] hover:bg-[var(--color-primary)] transition-colors duration-200 px-6 ">View All</Button>
+                    <Link href={"/all-animals"}>
+                        <Button className="bg-[var(--color-action)] hover:bg-[var(--color-primary)] transition-colors duration-200 px-6 ">View All</Button>
+                    </Link>
                 </div>
 
 

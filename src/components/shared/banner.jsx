@@ -5,6 +5,7 @@ import cowImage1 from '@/assets/cow1-preview.png'
 import cowImage2 from '@/assets/cow2.png'
 import cowImage3 from '@/assets/cow3.png'
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const images = [cowImage1, cowImage2, cowImage3]
 
@@ -20,7 +21,7 @@ const Banner = () => {
     }, [])
 
     return (
-        <div className='bg-[#f3ede4] py-15 md:py-20 animate__animated animate__fadeInUp animate__slow'>
+        <div className='bg-[#f3ede4] py-15 md:py-24 animate__animated animate__fadeInUp animate__slow'>
             <div className='w-11/12 max-w-350 mx-auto flex flex-col md:flex-row justify-between items-center gap-10'>
                 <div className='text-center md:text-left'>
                     <p className="uppercase tracking-[2px] md:tracking-[4px] text-xs lg:text-sm text-blackm mb-2 md:mb-4">
@@ -35,12 +36,14 @@ const Banner = () => {
                         Browse and book healthy Qurbani animals from trusted sellers.
                     </p>
 
-                    <Button className="bg-[var(--color-action)] hover:bg-[var(--color-primary)] transition duration-300 py-5">Browse All Animals</Button>
+                    <Link href={"/all-animals"}>
+                        <Button className="bg-[var(--color-action)] hover:bg-[var(--color-primary)] transition duration-300 py-5">Browse All Animals</Button>
+                    </Link>
                 </div>
 
                 <div >
                     <Image
-                    key={index}
+                        key={index}
                         src={images[index]}
                         alt='banner image'
                         width={600}

@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
     >
       <body className={`min-h-full flex flex-col  ${poppins.className}`}>
         <Navbar></Navbar>
-        <main className="">{children}</main>
+        <main>{children}</main>
         <Footer></Footer>
       </body>
     </html>

@@ -6,7 +6,7 @@ import logo from '@/assets/QurbaniHat_logo.png'
 
 const Footer = () => {
     return (
-        <footer className="bg-[#1C2B4C] text-white mt-16">
+        <footer className="bg-[#1C2B4C] text-white mt-8 md:mt-16 mb-10 md:mb-0">
             <div className="max-w-400 mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
                 {/* {Brand Section} */}
                 <div>
