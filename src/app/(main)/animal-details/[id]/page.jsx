@@ -1,4 +1,6 @@
+import BookingInfo from '@/components/BookingInfo';
 import { getAnimalDetails } from '@/lib/data';
+import { Button } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -78,17 +80,17 @@ const AnimalDetails = async ({ params }) => {
 
                     <div className="grid grid-cols-2 gap-4 mt-6">
                         <Link href={'/contact-us'}>
-                            <button className="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-3 px-4 rounded-xl transition duration-200 text-center">
+                            <Button size='lg' className="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-3 px-4 rounded-xl">
                                 Contact Seller
-                            </button>
+                            </Button>
                         </Link>
-                        <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl transition duration-200 text-center shadow-lg shadow-emerald-600/20">
-                            Book Now
-                        </button>
+                        <BookingInfo></BookingInfo>
+                        
                     </div>
 
                 </div>
             </div>
+
         </div>
     );
 };

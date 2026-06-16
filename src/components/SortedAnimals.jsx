@@ -7,7 +7,7 @@ import AnimalCard from './shared/AnimalCard';
 const SortedAnimals = ({ animals }) => {
 
     const [sortedType, setSortedType] = useState('Sort By')
-    const [selected, setSelected] = useState(new Set(["apple"]));
+    const [selected, setSelected] = useState(new Set([""]));
     const CustomCheckmarkIcon = (
         <svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
             <path
