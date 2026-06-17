@@ -1,42 +1,43 @@
 @import "tailwindcss";
-@import "@heroui/styles"; 
+@import "@heroui/styles";
 
-html{
+html {
   scroll-behavior: smooth;
 }
+
 body {
   background-color: var(--color-bg);
 }
 
-.bg-primary{
+.bg-primary {
   background-color: var(--color-primary);
 }
 
-.bg-secondary{
+.bg-secondary {
   background-color: var(--color-secondary);
 }
 
-.text-primary{
+.text-primary {
   color: var(--color-primary);
 }
 
-.text-secondary{
+.text-secondary {
   color: var(--color-secondary);
 }
 
-.text-action{
+.text-action {
   color: var(--color-action);
 }
 
-.hover-action:hover{
+.hover-action:hover {
   background-color: var(--color-action);
 }
 
-.text-white{
+.text-white {
   color: var(--color-white);
 }
 
-.text-black{
+.text-black {
   color: var(--color-black);
 }
 
