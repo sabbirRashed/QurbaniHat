@@ -107,10 +107,9 @@ const SignUpPage = () => {
                     {/* <button className='btn bg-slate-800 text-base-100 w-full'>Login</button> */}
                     <Button
                         type='submit'
-                        className='bg-[#1C2B4C] text-base-100 w-full'>Login</Button>
+                        className='bg-[#1C2B4C] text-base-100 w-full'>SignUp</Button>
 
                 </form>
-                <p className='mt-4 text-sm text-center'>Don't have an account? <Link href={'/signUp'} className='text-red-500'>SignUp</Link></p>
             </div>
         </div>
     );

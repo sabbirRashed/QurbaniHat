@@ -1,12 +1,24 @@
+'use client'
 import Image from 'next/image';
 import Link from 'next/link';
 import Avatar from '@/assets/user-image.png';
 import logo from '@/assets/QurbaniHat_logo.png'
 import NavLink from './NavLink';
-import { Button } from '@heroui/react';
+import { Button, ButtonGroup } from '@heroui/react';
+import { authClient } from '@/lib/auth-client';
 
 
 const Navbar = () => {
+
+    const { data: session, isPending } = authClient.useSession();
+
+    const user = session?.user;
+    console.log(user, 'user');
+
+    const handleLogOut = async () => {
+        await authClient.signOut();
+    }
+
     const links = <>
         <li><NavLink href={'/'}>Home</NavLink></li>
         <li><NavLink href={'/all-animals'}>All-animals</NavLink></li>
@@ -31,17 +43,41 @@ const Navbar = () => {
                         {links}
                     </ul>
                     <div className='flex justify-between items-center gap-2'>
-                        <Link href={'/'}
-                            className='inline-block border border-white rounded-full'>
-                            <Image
-                                src={Avatar}
-                                alt='User'
-                                width={40}
-                                height={40}>
+                        {
+                            isPending ? <h3>loading...</h3> :
+                                <>
+                                    {
+                                        user ? <>
+                                            <Link href={'/'}
+                                                className='inline-block border border-white rounded-full'>
+                                                <Image
+                                                    src={user?.image}
+                                                    alt='User'
+                                                    width={40}
+                                                    height={40}
+                                                    className='rounded-full w-10 h-10'>
+                                                
 
-                            </Image>
-                        </Link>
-                        <Link href={'signin'}><button>Login</button></Link>
+                                                </Image>
+                                            </Link>
+                                            <Button
+                                                onClick={handleLogOut}
+                                                className='bg-[var(--color-action)] hover:bg-[#45a39e] transition-all duration-300 '>LogOut</Button>
+                                        </> :
+                                            <>
+
+                                                <Link href={'signin'}>
+                                                    <Button className='bg-[var(--color-action)] hover:bg-[#45a39e] transition-all duration-300'>Login</Button>
+                                                </Link>
+
+                                                <Link href={'signUp'}>
+                                                    <Button className='bg-[var(--color-action)] hover:bg-[#45a39e] transition-all duration-300'>SignUp</Button>
+                                                </Link>
+
+                                            </>
+                                    }
+                                </>
+                        }
                     </div>
                 </div>
             </nav>
