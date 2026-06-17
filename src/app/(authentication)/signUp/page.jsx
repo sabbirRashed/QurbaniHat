@@ -9,6 +9,7 @@ import { useForm } from 'react-hook-form';
 import { authClient } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
+import { FcGoogle } from 'react-icons/fc';
 
 const SignUpPage = () => {
 
@@ -42,6 +43,12 @@ const SignUpPage = () => {
             })
         }
     }
+
+    const handleGoogleSignIn = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+    };
 
     return (
         <div className='container mx-auto min-h-[80vh] flex justify-center items-center '>
@@ -110,6 +117,11 @@ const SignUpPage = () => {
                         className='bg-[#1C2B4C] text-base-100 w-full'>SignUp</Button>
 
                 </form>
+
+                <p className='text-center'>or</p>
+                <Button 
+                onClick={handleGoogleSignIn}
+                className='bg-[#1C2B4C] text-base-100 w-full'><FcGoogle />Google</Button>
             </div>
         </div>
     );
