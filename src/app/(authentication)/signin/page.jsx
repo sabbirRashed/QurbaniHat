@@ -6,25 +6,42 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import logo from '@/assets/QurbaniHat_logo.png'
+import { authClient } from '@/lib/auth-client';
+import { toast } from 'react-toastify';
 
 const SigninPage = () => {
 
     const [isShowPassword, setIsShowPassword] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const handleLoginForm = (e) => {
-        e.preventDefault();
+    const handleLoginForm = async (data) => {
+        const email = data.email;
+        const password = data.password;
 
-        const formData = new FormData(e.currentTarget);
-        const userData = Object.fromEntries(formData.entries());
+        console.log(email, password, "user data");
 
-        console.log("form submited data:", formData, userData);
+        const { data: userData, error } = await authClient.signIn.email({
+            email: email,
+            password: password,
+            callbackURL: '/',
+        })
+
+        if(userData){
+            toast.success('SignIn successfully', {
+                autoClose: 2000
+            })
+        }
+        else{
+            toast.error(error.message, {
+                autoClose: 2000
+            })
+        }
     }
 
 
     return (
         <div className='container mx-auto min-h-[80vh] flex justify-center items-center '>
-            <div className='p-8 md:p-8 rounded-xl bg-white border border-[#1c2b4c3d] mx-4 w-sm '>
+            <div className='p-8 md:p-8 rounded-xl bg-white border border-[#1c2b4c3d] mx-4 w-sm shadow-xl'>
                 <Image src={logo}
                     alt='logo'
                     width={70}
@@ -70,7 +87,7 @@ const SigninPage = () => {
                         className='bg-[#1C2B4C] text-base-100 w-full'>Login</Button>
 
                 </form>
-                <p className='mt-4 text-sm text-center'>Don't have an account? <Link href={'/register'} className='text-red-500'>Register</Link></p>
+                <p className='mt-4 text-sm text-center'>Don't have an account? <Link href={'/signUp'} className='text-red-500'>SignUp</Link></p>
             </div>
         </div>
     );
