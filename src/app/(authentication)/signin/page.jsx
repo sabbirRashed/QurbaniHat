@@ -8,6 +8,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import logo from '@/assets/QurbaniHat_logo.png'
 import { authClient } from '@/lib/auth-client';
 import { toast } from 'react-toastify';
+import { FcGoogle } from 'react-icons/fc';
 
 const SigninPage = () => {
 
@@ -26,17 +27,23 @@ const SigninPage = () => {
             callbackURL: '/',
         })
 
-        if(userData){
+        if (userData) {
             toast.success('SignIn successfully', {
                 autoClose: 2000
             })
         }
-        else{
+        else {
             toast.error(error.message, {
                 autoClose: 2000
             })
         }
     }
+
+    const handleGoogleSignIn = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+    };
 
 
     return (
@@ -87,7 +94,13 @@ const SigninPage = () => {
                         className='bg-[#1C2B4C] text-base-100 w-full'>Login</Button>
 
                 </form>
+                <p className='text-center'>or</p>
+                <Button
+                    onClick={handleGoogleSignIn}
+                    className='bg-[#1C2B4C] text-base-100 w-full'><FcGoogle />Google</Button>
+
                 <p className='mt-4 text-sm text-center'>Don't have an account? <Link href={'/signUp'} className='text-red-500'>SignUp</Link></p>
+
             </div>
         </div>
     );

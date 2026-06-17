@@ -21,8 +21,6 @@ const SignUpPage = () => {
     const handleSignUpForm = async (data) => {
         const { name, photoURL, email, password } = data;
 
-        console.log(name, photoURL, email, password, "user data");
-
         const { data: userData, error } = await authClient.signUp.email({
             name: name,
             email: email,
