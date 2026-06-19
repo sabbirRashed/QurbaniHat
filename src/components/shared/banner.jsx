@@ -6,6 +6,8 @@ import cowImage2 from '@/assets/cow2.png'
 import cowImage3 from '@/assets/cow3.png'
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { FaArrowRightLong } from 'react-icons/fa6';
+import { GoArrowUpRight } from 'react-icons/go';
 
 const images = [cowImage1, cowImage2, cowImage3]
 
@@ -37,7 +39,7 @@ const Banner = () => {
                     </p>
 
                     <a href="#featured_animal">
-                        <Button className="bg-[var(--color-action)] hover:bg-[var(--color-primary)] transition duration-300 py-5">Browse All Animals</Button>
+                        <Button className="bg-[var(--color-action)] hover:bg-[var(--color-primary)] transition duration-300 py-5">Browse Animals <GoArrowUpRight /></Button>
                     </a>
                 </div>
 

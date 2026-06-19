@@ -6,6 +6,8 @@ import logo from '@/assets/QurbaniHat_logo.png'
 import NavLink from './NavLink';
 import { Button, ButtonGroup } from '@heroui/react';
 import { authClient } from '@/lib/auth-client';
+import { CiLogout } from 'react-icons/ci';
+import { redirect } from 'next/navigation';
 
 
 const Navbar = () => {
@@ -16,6 +18,8 @@ const Navbar = () => {
 
     const handleLogOut = async () => {
         await authClient.signOut();
+
+        redirect('/')
     }
 
     const links = <>
@@ -55,13 +59,13 @@ const Navbar = () => {
                                                     width={40}
                                                     height={40}
                                                     className='rounded-full w-10 h-10'>
-                                                
+
 
                                                 </Image>
                                             </Link>
                                             <Button
                                                 onClick={handleLogOut}
-                                                className='bg-[var(--color-action)] hover:bg-[#45a39e] transition-all duration-300 '>LogOut</Button>
+                                                className='bg-[var(--color-action)] hover:bg-[#45a39e] transition-all duration-300 '><CiLogout />LogOut</Button>
                                         </> :
                                             <>
 
@@ -95,19 +99,42 @@ const Navbar = () => {
                         <span className='text-sm text-[#F8F4EE] font-bold tracking-wide '>QurbaniHat</span>
                     </div>
 
-                    <div className='flex justify-between items-center gap-2'>
-                        <Link href="/signin"><button>Login</button></Link>
-                        <Link
-                            href='/'
-                            className='inline-block border border-white rounded-full'>
-                            <Image
-                                src={Avatar}
-                                alt='User'
-                                width={30}
-                                height={30}>
+                    <div>
+                        {
+                            isPending ? <h3>loading...</h3> :
+                                <>
+                                    {
+                                        user ? <div className='flex justify-between items-center gap-1'>
+                                            <Link href={'/'}
+                                                className='inline-block border border-white rounded-full'>
+                                                <Image
+                                                    src={user?.image}
+                                                    alt='User'
+                                                    width={40}
+                                                    height={40}
+                                                    className='rounded-full w-10 h-10'>
 
-                            </Image>
-                        </Link>
+
+                                                </Image>
+                                            </Link>
+                                            <Button
+                                                onClick={handleLogOut}
+                                                className='bg-[var(--color-action)] hover:bg-[#45a39e] transition-all duration-300 '><CiLogout />LogOut</Button>
+                                        </div> :
+                                            <div className='flex justify-between items-center gap-1'>
+
+                                                <Link href={'signin'}>
+                                                    <Button className='bg-[var(--color-action)] hover:bg-[#45a39e] transition-all duration-300'>Login</Button>
+                                                </Link>
+
+                                                <Link href={'signUp'}>
+                                                    <Button className='bg-[var(--color-action)] hover:bg-[#45a39e] transition-all duration-300'>SignUp</Button>
+                                                </Link>
+
+                                            </div>
+                                    }
+                                </>
+                        }
                     </div>
                 </header>
 
