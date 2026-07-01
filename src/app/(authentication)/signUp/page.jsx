@@ -32,7 +32,7 @@ const SignUpPage = () => {
             toast.success('SignUp successfully', {
                 autoClose: 2000
             })
-            'hello'
+            
             router.push('/');
         }
         else {

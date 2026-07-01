@@ -5,6 +5,7 @@ import { BsTelephone } from 'react-icons/bs';
 import { IoMdStopwatch } from 'react-icons/io';
 import { IoLocationOutline, IoLogoWhatsapp } from 'react-icons/io5';
 import { TfiEmail } from 'react-icons/tfi';
+import { toast } from 'react-toastify';
 
 const ContactPage = () => {
 
@@ -18,7 +19,9 @@ const ContactPage = () => {
         console.log(userData, "contactInfo");
         form.reset();
 
-
+        toast.success("send successfully",{
+            autoClose: 2000
+        })
     }
     return (
         <div className='min-h-[80vh] w-11/12 md:w-9/12 mx-auto mt-10 md:mt-20 flex flex-col md:flex-row justify-between gap-10 md:gap-25 flex-1 '>

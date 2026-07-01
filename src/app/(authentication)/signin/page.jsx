@@ -10,9 +10,11 @@ import { authClient } from '@/lib/auth-client';
 import { toast } from 'react-toastify';
 import { FcGoogle } from 'react-icons/fc';
 import { MdLogin } from 'react-icons/md';
+import { useRouter } from 'next/navigation';
 
 const SigninPage = () => {
 
+    const router = useRouter();
     const [isShowPassword, setIsShowPassword] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -25,13 +27,14 @@ const SigninPage = () => {
         const { data: userData, error } = await authClient.signIn.email({
             email: email,
             password: password,
-            callbackURL: '/',
+            
         })
 
         if (userData) {
             toast.success('SignIn successfully', {
                 autoClose: 2000
             })
+            router.push('/')
         }
         else {
             toast.error(error.message, {

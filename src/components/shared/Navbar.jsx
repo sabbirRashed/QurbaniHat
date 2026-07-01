@@ -8,6 +8,7 @@ import { Button, ButtonGroup } from '@heroui/react';
 import { authClient } from '@/lib/auth-client';
 import { CiLogout } from 'react-icons/ci';
 import { redirect } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 
 const Navbar = () => {
@@ -19,6 +20,9 @@ const Navbar = () => {
     const handleLogOut = async () => {
         await authClient.signOut();
 
+        toast.success("logout successfully", {
+            autoClose: 2000
+        })
         redirect('/')
     }
 
@@ -51,7 +55,7 @@ const Navbar = () => {
                                 <>
                                     {
                                         user ? <>
-                                            <Link href={'/'}
+                                            <Link href={'/user-details'}
                                                 className='inline-block border border-white rounded-full'>
                                                 <Image
                                                     src={user?.image}
@@ -105,7 +109,7 @@ const Navbar = () => {
                                 <>
                                     {
                                         user ? <div className='flex justify-between items-center gap-1'>
-                                            <Link href={'/'}
+                                            <Link href={'/user-details'}
                                                 className='inline-block border border-white rounded-full'>
                                                 <Image
                                                     src={user?.image}
