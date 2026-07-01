@@ -1,3 +1,4 @@
+"use client"
 import { Button, Input, Label, TextArea } from '@heroui/react';
 import React from 'react';
 import { BsTelephone } from 'react-icons/bs';
@@ -6,9 +7,22 @@ import { IoLocationOutline, IoLogoWhatsapp } from 'react-icons/io5';
 import { TfiEmail } from 'react-icons/tfi';
 
 const ContactPage = () => {
+
+    const handleContactInfo = (e)=>{
+        e.preventDefault();
+
+        const form = e.currentTarget
+        const formData = new FormData(form);
+        const userData = Object.fromEntries(formData.entries());
+
+        console.log(userData, "contactInfo");
+        form.reset();
+
+
+    }
     return (
         <div className='min-h-[80vh] w-11/12 md:w-9/12 mx-auto mt-10 md:mt-20 flex flex-col md:flex-row justify-between gap-10 md:gap-25 flex-1 '>
-            <div>
+            <div className='flex-1'>
                 <h2 className='text-2xl md:text-3xl font-bold text-primary'>Contact Us</h2>
                 <h3 className='text-lg md:text-xl font-semibold text-primary mt-4 '>We're Here to Help</h3>
                 <p className='mt-2 text-sm md:max-w-120'>Have questions about buying cattle, becoming a seller, booking a visit, or placing an order? Our support team is ready to assist you.</p>
@@ -45,30 +59,32 @@ const ContactPage = () => {
                 </div>
             </div>
 
-            <form className="flex justify-center  flex-col gap-4 flex-2 h-150 border border-gray-300 bg-[#e0ceb6] p-6 md:p-20 rounded-3xl  shadow-2xl">
+            <form 
+            onSubmit={handleContactInfo}
+            className="flex justify-center  flex-col gap-4  h-150 border border-gray-300 bg-[#e0ceb6] p-6 xl:p-20 rounded-3xl  shadow-2xl flex-1 ">
                 <div className='space-y-4 md:space-y-6'>
-                    <div className='flex justify-between items-center gap-6 md:gap-10'>
+                    <div className='flex md:flex-col xl:flex-row justify-between items-center gap-6 xl:gap-10'>
                         <div className="flex flex-col flex-1 gap-1 md:w-full">
-                            <Label htmlFor="name">First name</Label>
-                            <Input id="name" placeholder="John " type="text" className="w-full text-xs md:text-sm" />
+                            <Label htmlFor="first_name">First name</Label>
+                            <Input id="first_name" name='first_name' placeholder="John " type="text" className="w-full text-xs md:text-sm" required />
                         </div>
 
                         <div className="flex flex-col flex-1 gap-1 md:w-full">
-                            <Label htmlFor="name">Last name</Label>
-                            <Input id="name" placeholder="Carter" type="text" className="w-full text-xs md:text-sm" />
+                            <Label htmlFor="last_name">Last name</Label>
+                            <Input id="last_name" name='last_name' placeholder="Carter" type="text" className="w-full text-xs md:text-sm" required />
                         </div>
 
                     </div>
 
-                    <div className='flex justify-between items-center gap-6 md:gap-10'>
+                    <div className='flex md:flex-col xl:flex-row justify-between items-center gap-6 xl:gap-10'>
                         <div className="flex flex-col gap-1 w-full">
                             <Label htmlFor="input-type-email">Email</Label>
-                            <Input id="input-type-email" placeholder="jane@example.com" type="email"
+                            <Input id="input-type-email" name='email' placeholder="jane@example.com" type="email"
                                 className="w-full text-xs md:text-sm" />
                         </div>
                         <div className="flex flex-col gap-1 w-full">
                             <Label htmlFor="phone">Phone</Label>
-                            <Input id="phone" placeholder='+88017XXXXXXXX' type="tel"
+                            <Input id="phone" name='number' placeholder='+88017XXXXXXXX' type="tel"
                                 className="w-full text-xs md:text-sm" />
                         </div>
                     </div>
@@ -79,6 +95,7 @@ const ContactPage = () => {
                             aria-label="Quick project update"
                             className="h-32 w-full text-xs md:text-sm"
                             placeholder="write your message here"
+                            name='message'
                         />
                     </div>
                     <Button type='submit' className='w-full bg-secondary '>Send</Button>
