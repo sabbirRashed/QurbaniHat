@@ -7,7 +7,7 @@ import { TfiEmail } from 'react-icons/tfi';
 
 const ContactPage = () => {
     return (
-        <div className='min-h-[80vh] w-11/12 md:w-9/12 mx-auto mt-10 md:mt-20 flex justify-between gap-25 flex-1'>
+        <div className='min-h-[80vh] w-11/12 md:w-9/12 mx-auto mt-10 md:mt-20 flex flex-col md:flex-row justify-between gap-10 md:gap-25 flex-1 '>
             <div>
                 <h2 className='text-2xl md:text-3xl font-bold text-primary'>Contact Us</h2>
                 <h3 className='text-lg md:text-xl font-semibold text-primary mt-4 '>We're Here to Help</h3>
@@ -45,29 +45,31 @@ const ContactPage = () => {
                 </div>
             </div>
 
-            <form className="flex w-80 flex-col gap-4 flex-2 border border-gray-300 bg-[#e0ceb6] p-10 rounded-3xl  shadow-2xl w-auto">
-                <div className='space-y-4'>
-                    <div className='flex justify-between items-center gap-4'>
-                        <div className="flex flex-col gap-1 w-full">
+            <form className="flex justify-center  flex-col gap-4 flex-2 h-150 border border-gray-300 bg-[#e0ceb6] p-6 md:p-20 rounded-3xl  shadow-2xl">
+                <div className='space-y-4 md:space-y-6'>
+                    <div className='flex justify-between items-center gap-6 md:gap-10'>
+                        <div className="flex flex-col flex-1 gap-1 md:w-full">
                             <Label htmlFor="name">First name</Label>
-                            <Input id="name" placeholder="John " type="text" />
+                            <Input id="name" placeholder="John " type="text" className="w-full text-xs md:text-sm" />
                         </div>
 
-                        <div className="flex flex-col gap-1 w-full">
+                        <div className="flex flex-col flex-1 gap-1 md:w-full">
                             <Label htmlFor="name">Last name</Label>
-                            <Input id="name" placeholder="Carter" type="text" />
+                            <Input id="name" placeholder="Carter" type="text" className="w-full text-xs md:text-sm" />
                         </div>
 
                     </div>
 
-                    <div className='flex justify-between items-center gap-4'>
+                    <div className='flex justify-between items-center gap-6 md:gap-10'>
                         <div className="flex flex-col gap-1 w-full">
                             <Label htmlFor="input-type-email">Email</Label>
-                            <Input id="input-type-email" placeholder="jane@example.com" type="email" />
+                            <Input id="input-type-email" placeholder="jane@example.com" type="email"
+                                className="w-full text-xs md:text-sm" />
                         </div>
                         <div className="flex flex-col gap-1 w-full">
                             <Label htmlFor="phone">Phone</Label>
-                            <Input id="phone" placeholder='+88017XXXXXXXX' type="tel" />
+                            <Input id="phone" placeholder='+88017XXXXXXXX' type="tel"
+                                className="w-full text-xs md:text-sm" />
                         </div>
                     </div>
 
@@ -75,11 +77,11 @@ const ContactPage = () => {
                         <Label htmlFor="input-type-password">Message</Label>
                         <TextArea
                             aria-label="Quick project update"
-                            className="h-25 w-full"
+                            className="h-32 w-full text-xs md:text-sm"
                             placeholder="write your message here"
                         />
                     </div>
-                    <Button type='submit' className='w-full bg-secondary mt-6'>Submit</Button>
+                    <Button type='submit' className='w-full bg-secondary '>Send</Button>
 
                 </div>
             </form>
