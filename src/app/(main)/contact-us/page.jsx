@@ -16,7 +16,7 @@ const ContactPage = () => {
         const formData = new FormData(form);
         const userData = Object.fromEntries(formData.entries());
 
-        console.log(userData, "contactInfo");
+        // console.log(userData, "contactInfo");
         form.reset();
 
         toast.success("send successfully",{

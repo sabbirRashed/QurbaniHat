@@ -1,4 +1,5 @@
 "use client"
+import UserModal from '@/components/shared/UserModal';
 import { authClient } from '@/lib/auth-client';
 import { Avatar, Button, Card, Chip, Separator } from '@heroui/react';
 import React from 'react';
@@ -20,18 +21,20 @@ const UserInfo = () => {
             <h2 className='text-3xl font-bold text-primary'>My Profile</h2>
 
             <Card className='p-4 md:p-8 mt-6 rounded-xl space-y-6'>
+                <UserModal></UserModal>
 
-                <div className='text-right'><Button className=' bg-secondary text-white'><CiEdit />Edit</Button></div>
 
                 {
                     user ? <>
                         {/* header */}
                         <div className='flex flex-col md:flex-row  md:items-center md:gap-5 text-center md:text-left'>
-                            <Avatar className='w-24 h-24 md:w-46 md:h-46 rounded-full md:rounded-xl mx-auto md:mx-0 relative'>
-                                <Avatar.Image alt='Sabbir Rahman' src={user?.image} />
-                                <Avatar.Fallback className='text-2xl font-bold  text-secondary'>SR</Avatar.Fallback>
-                                <button className='absolute top-33 right-2 bg-white rounded-full p-2 border border-gray-300 cursor-pointer'><CiEdit className='text-2xl' /></button>
-                            </Avatar>
+                            <div className='relative w-fit mx-auto md:mx-0 border rounded-full'>
+                                <Avatar className='w-24 h-24 md:w-46 md:h-46 rounded-full'>
+                                    <Avatar.Image alt='Sabbir Rahman' src={user?.image} />
+                                    <Avatar.Fallback className='text-2xl font-bold  text-secondary'>{user?.name}</Avatar.Fallback>
+                                </Avatar>
+                                <button className='absolute top-17 -right-2 md:top-33 md:right-0 bg-white rounded-full p-1 md:p-2 border border-gray-300 cursor-pointer'><CiEdit className='text-sm md:text-2xl' /></button>
+                            </div>
 
                             <div className=''>
                                 <h3 className='text-3xl font-bold text-primary mt-4'>{user?.name}</h3>
@@ -54,32 +57,32 @@ const UserInfo = () => {
 
                                 <div>
                                     <h2 className='font-bold text-primary'>First Name</h2>
-                                    <p>---</p>
+                                    <p>{user?.firstName || "---"}</p>
                                 </div>
 
                                 <div>
                                     <h2 className='font-bold text-primary'>Last Name</h2>
-                                    <p>---</p>
+                                    <p>{user?.lastName || "---"}</p>
                                 </div>
 
                                 <div>
                                     <h2 className='font-bold text-primary'>Email</h2>
-                                    <p>{user?.email}</p>
+                                    <p>{user?.email || '---'}</p>
                                 </div>
 
                                 <div>
                                     <h2 className='font-bold text-primary'>Mobile Number</h2>
-                                    <p>017xxxxxxx</p>
+                                    <p>{user?.phone || '---'}</p>
                                 </div>
 
                                 <div>
                                     <h2 className='font-bold text-primary'>Date of birth</h2>
-                                    <p>---</p>
+                                    <p>{user?.dateOfBirth || "---"}</p>
                                 </div>
 
                                 <div>
                                     <h2 className='font-bold text-primary'>Gender</h2>
-                                    <p>---</p>
+                                    <p>{user?.gender || "---"}</p>
                                 </div>
                             </div>
                         </div>
