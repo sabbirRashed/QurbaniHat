@@ -11,8 +11,8 @@ const UserInfo = () => {
     const user = session?.user;
 
     if (user) {
-        const { name, email, image, } = user;
-        console.log(name);
+        const { name, email, image, phone } = user;
+        console.log(phone);
     }
 
     return (
@@ -30,9 +30,9 @@ const UserInfo = () => {
                             <Avatar className='w-24 h-24 md:w-46 md:h-46 rounded-full md:rounded-xl mx-auto md:mx-0 relative'>
                                 <Avatar.Image alt='Sabbir Rahman' src={user?.image} />
                                 <Avatar.Fallback className='text-2xl font-bold  text-secondary'>SR</Avatar.Fallback>
-                                <button className='absolute top-33 right-2 bg-white rounded-full p-2 border border-gray-300 cursor-pointer'><CiEdit className='text-2xl'/></button>
+                                <button className='absolute top-33 right-2 bg-white rounded-full p-2 border border-gray-300 cursor-pointer'><CiEdit className='text-2xl' /></button>
                             </Avatar>
-                            
+
                             <div className=''>
                                 <h3 className='text-3xl font-bold text-primary mt-4'>{user?.name}</h3>
                                 <p>{user?.email}</p>
@@ -40,7 +40,7 @@ const UserInfo = () => {
                                     color="success"
                                     className="mt-2"
                                 >
-                                    Buyer
+                                    {user?.role}
                                 </Chip>
                             </div>
 
@@ -51,16 +51,6 @@ const UserInfo = () => {
                         <div>
                             <h2 className='text-2xl font-bold text-primary'>Personal Information</h2>
                             <div className='text-gray-500 space-y-4 grid grid-cols-1 md:grid-cols-2 md:not-only:gap-4 mt-6'>
-                                <div>
-                                    <h2 className='font-bold text-primary'>Full Name</h2>
-                                    <p>{user?.name}</p>
-                                </div>
-
-                                
-                                <div>
-                                    <h2 className='font-bold text-primary'>Email</h2>
-                                    <p>{user?.email}</p>
-                                </div>
 
                                 <div>
                                     <h2 className='font-bold text-primary'>First Name</h2>
@@ -70,6 +60,11 @@ const UserInfo = () => {
                                 <div>
                                     <h2 className='font-bold text-primary'>Last Name</h2>
                                     <p>---</p>
+                                </div>
+
+                                <div>
+                                    <h2 className='font-bold text-primary'>Email</h2>
+                                    <p>{user?.email}</p>
                                 </div>
 
                                 <div>
